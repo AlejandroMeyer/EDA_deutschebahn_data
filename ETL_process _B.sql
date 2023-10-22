@@ -20,12 +20,12 @@ USE [DWH]
 
 CREATE TABLE [DWH].[dbo].[deutschebahn_real_trafic_data]
 (
-	bst_nr_8		INT			NOT NULL,
-	country			VARCHAR(20) NOT NULL,
+	bst_nr_8		INT		NOT NULL,
+	country			VARCHAR(20) 	NOT NULL,
 	prod_datum		DATETIME	NOT NULL,
-	number_trips	INT			NOT NULL,
-	[minutes]		INT			NOT NULL,
-	[last_update]	DATETIME	NOT NULL
+	number_trips		INT		NOT NULL,
+	[minutes]		INT		NOT NULL,
+	[last_update]		DATETIME	NOT NULL
 )
 GO
 	ALTER TABLE [dbo].[deutschebahn_real_trafic_data] ADD CONSTRAINT [deutschebahn_real_trafic_data_lastupdate] DEFAULT (getdate()) FOR [last_update]
@@ -49,11 +49,11 @@ DROP TABLE IF EXISTS [DWH].[dbo].[temp_deutschebahn_real_trafic_data]
 
 CREATE TABLE [DWH].[dbo].[temp_deutschebahn_real_trafic_data]
 (
-	bst_nr_8		INT			NOT NULL,
-	country			VARCHAR(20) NOT NULL,
+	bst_nr_8		INT		NOT NULL,
+	country			VARCHAR(20) 	NOT NULL,
 	prod_datum		DATETIME	NOT NULL,
 	number_trips	INT			NOT NULL,
-	[minutes]		INT			NOT NULL
+	[minutes]		INT		NOT NULL
 )
 	
 
@@ -75,12 +75,12 @@ BEGIN
 
 	INSERT INTO [DWH].[dbo].[deutschebahn_real_trafic_data]
 	SELECT 
-		 CONVERT(INT,bst_nr_8)				AS bst_nr_8
+		 CONVERT(INT,bst_nr_8)			AS bst_nr_8
 		,CONVERT(VARCHAR(20),country)		AS country
 		,CONVERT(DATETIME,prod_datum,104)	AS prod_datum
-		,CONVERT(INT,number_trips)			AS number_trips
-		,CONVERT(INT,[minutes])				AS [minutes]
-		,GETDATE()							AS [last_update]
+		,CONVERT(INT,number_trips)		AS number_trips
+		,CONVERT(INT,[minutes])			AS [minutes]
+		,GETDATE()				AS [last_update]
 	FROM [DWH].[dbo].[temp_deutschebahn_real_trafic_data] WITH(NOLOCK)
 
 END
