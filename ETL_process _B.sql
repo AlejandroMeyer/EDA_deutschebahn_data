@@ -52,7 +52,7 @@ CREATE TABLE [DWH].[dbo].[temp_deutschebahn_real_trafic_data]
 	bst_nr_8		INT		NOT NULL,
 	country			VARCHAR(20) 	NOT NULL,
 	prod_datum		DATETIME	NOT NULL,
-	number_trips	INT			NOT NULL,
+	number_trips		INT		NOT NULL,
 	[minutes]		INT		NOT NULL
 )
 	
