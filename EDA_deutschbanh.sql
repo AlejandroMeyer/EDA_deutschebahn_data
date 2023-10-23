@@ -14,7 +14,7 @@ SELECT
      ,CONVERT(DATE,[prod_datum]) AS [prod_datum]
      ,[number_trips]
      ,[minutes]
-	 ,ROUND(CONVERT(FLOAT,[minutes]) / CONVERT(FLOAT,[number_trips]),2)  AS [avg_delay_per_trip]
+     ,ROUND(CONVERT(FLOAT,[minutes]) / CONVERT(FLOAT,[number_trips]),2)  AS [avg_delay_per_trip]
 --INTO #T1
 FROM [DWH].[dbo].[deutschebahn_real_trafic_data] WITH(NOLOCK)
 WHERE [country] = 'DEUTSCHLAND'
@@ -53,11 +53,10 @@ PRINT 'In the year 2016 there were a total of ' + @TOTAL + ' trips in Germany,' 
 
 -- The day 
 SELECT 
-	  --[bst_nr_8]
       [prod_datum]
      ,SUM([number_trips]) AS total_number_trips
      ,SUM([minutes]) AS [total_minutes_delay]
-	 ,ROUND(CONVERT(FLOAT,SUM([minutes])) / CONVERT(FLOAT,SUM([number_trips])),2)  AS [avg_delay_per_trip]
+     ,ROUND(CONVERT(FLOAT,SUM([minutes])) / CONVERT(FLOAT,SUM([number_trips])),2)  AS [avg_delay_per_trip]
 FROM #T1
 GROUP BY [prod_datum]
 ORDER BY [prod_datum] DESC
