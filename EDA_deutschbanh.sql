@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS #T1
 /*------------------------------------------------------------------- */
 
 SELECT 
-	  [bst_nr_8]
+      [bst_nr_8]
      ,CONVERT(DATE,[prod_datum]) AS [prod_datum]
      ,[number_trips]
      ,[minutes]
