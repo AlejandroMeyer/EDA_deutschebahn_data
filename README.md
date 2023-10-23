@@ -10,7 +10,7 @@ The following can be found in the repository:
 
 * deutschebahn_real_trafic_data.dtsx: This is an SSIS where from a folder the deposited file is taken and inserted into a table in a database (using a Flat file source).
 
-* Zugfahrten_2016_12.zip: Zugfahrten_2016_12.zip: Zugfahrten file downloaded from the official train website. 
+* Zugfahrten_2016_12.zip: Zugfahrten_2016_12.zip: File downloaded from the official train website. 
 
 * EDA_deutschbanh.sql: SQL analysis to determine % of trips that had a delay, find the month with the highest number of delays, etc.
 
