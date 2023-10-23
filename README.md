@@ -18,7 +18,7 @@ The following can be found in the repository:
 
 * main.ipynb: Python code that replicates the queries made in SQL, in the same way as a connection to the database to read the table from SQL and not from the file.
 
-Data queried: https://data.deutschebahn.com/dataset/ist-verkehrsdaten-der-db-cargo-auf-bst8-ebene.html
+Data consulted: https://data.deutschebahn.com/dataset/ist-verkehrsdaten-der-db-cargo-auf-bst8-ebene.html
 
 
 -------------------------------------------------
