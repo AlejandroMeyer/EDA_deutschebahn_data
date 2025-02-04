@@ -21,23 +21,4 @@ The following can be found in the repository:
 Data consulted: https://data.deutschebahn.com/dataset/ist-verkehrsdaten-der-db-cargo-auf-bst8-ebene.html
 
 
--------------------------------------------------
 
-El proyecto consta en un análisis con datos de retraso en los trenes, inicialmente se consideró para un análisis predictivo sobre que probabilidad existía de que determinada estación o tren tuviera un retraso, sin embargo, se complica debido a que solo existen datos de 2 años, por lo que se decidió únicamente hacer un análisis exploratorio.
-
-El objetivo principal era determinar los porcentajes de retraso en los trenes, con lo cual se concluye que para el año 2016 hubo un total de 771621 viajes, de los cuales el 59.58% tuvo un retraso al menos de 1 minuto, mientras que un 40.42% no presentó ningún tipo de retraso, siendo así que el mes más afectado fue noviembre.
-Del mismo modo, se decidió mostrar las formas en las que se puede hacer este análisis en SQL y Python.
-
-En el repositorio se encuentra lo siguiente:
-
-* deutschebahn_real_trafic_data.dtsx: Es un SSIS donde desde una carpeta se toma el file depositado y se inserta en una tabla en una base de datos (usando un Flat file source).
-
-* Zugfahrten_2016_12.zip: Archivo comprimido descargado de la página oficial de trenes. 
-
-* EDA_deutschbanh.sql: Analisis en SQL para determinar % de viajes que tuvieron un retraso, encontrar el mes con mayor número de retrasos, etc.
-
-* ETL_process _B.sql: Consultas que usa el SSIS para insertar data a la tabla de producción.
-
-* main.ipynb: Código en Python que replica las consultas realizadas en SQL, del mismo modo que una conexión a la base datos para leer la tabla desde SQL y no desde el file.
-
-Datos consultados: https://data.deutschebahn.com/dataset/ist-verkehrsdaten-der-db-cargo-auf-bst8-ebene.html
